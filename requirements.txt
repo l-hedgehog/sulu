@@ -1,0 +1,4 @@
+lxml
+M2Crypto
+rdflib
+pyasn1
