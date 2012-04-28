@@ -6,7 +6,7 @@
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 #
 
-__version__ = '0.1.20120229'
+__version__ = '0.1.20120229.1'
 
 import hashlib, os, sys
 try:

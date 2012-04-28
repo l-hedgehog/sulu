@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name='sulu',
-      version='0.1.20120229',
+      version='0.1.20120229.1',
       description='Sign update.rdf of mozilla add-ons in Python',
       author='Hector Zhao',
       author_email='bzhao@mozilla.com',
