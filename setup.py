@@ -5,11 +5,9 @@ try:
 except ImportError:
     from distutils.core import setup
 
-from sulu import __version__
-
 setup(
     name='sulu',
-    version=__version__,
+    version='0.1.20130404.1',
     description='Sign update.rdf of mozilla add-ons in Python',
     long_description=open('README.rst').read(),
     author='Hector Zhao',
