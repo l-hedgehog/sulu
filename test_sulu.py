@@ -2,7 +2,10 @@
 import os
 import rdflib
 import sulu
-import unittest
+try:
+    import unittest2 as unittest
+except ImportError:
+    import unittest
 
 class TestSerializeRdf(unittest.TestCase):
     def setUp(self):
