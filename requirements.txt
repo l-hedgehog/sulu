@@ -1,4 +1,4 @@
 lxml
 M2Crypto
-rdflib
+rdflib==3.1.0 # due to http://git.io/fEGivA
 pyasn1

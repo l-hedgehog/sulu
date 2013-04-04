@@ -6,7 +6,7 @@
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 #
 
-__version__ = '0.1.20120229.1'
+__version__ = '0.1.20130404'
 
 import hashlib, os, sys
 try:
@@ -236,7 +236,7 @@ def pass_phrase_cb(pass_phrase_opt):
             '=': lambda x : x,
             '@': lambda x : open(x).readline().rstrip(),
             '$': lambda x : os.getenv(x),
-            '&': lambda x : os.fdopen(x).readline().rstrip(),
+            '&': lambda x : os.fdopen(int(x)).readline().rstrip(),
         }[pass_phrase_opt[0]](pass_phrase_opt[1:])
 
     return get_passphrase
@@ -274,7 +274,7 @@ def parse_opts():
     parser.add_option('-h', '--help',
         action='help',
         help='print this help text and exit')
-    parser.add_option('-V', '--version',
+    parser.add_option('-v', '--version',
         action='version',
         help='print program version and exit')
     parser.add_option('-k',

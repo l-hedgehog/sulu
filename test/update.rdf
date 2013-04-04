@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RDF:RDF xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <!-- This Description resource includes all the update and compatibility information for
+       a single add-on with the id foobar@developer.mozilla.org. You can list multiple
+       add-ons information in the same RDF file. -->
+  <!-- [sulu] s/about/RDF:about/ for rdflib to correct parse -->
+  <RDF:Description RDF:about="urn:mozilla:extension:foobar@developer.mozilla.org">
+    <em:updates>
+      <RDF:Seq>
+
+        <!-- Each li is a different version of the same add-on -->
+        <!-- [sulu] RDF:li will be parsed as RDF:_n by rdflib, which is not valid in the
+             context of mozilla add-ons. But as the test is for sorting and other
+             manipulations, RDF:_n is used in the reference serializations. -->
+        <RDF:li>
+          <RDF:Description>
+            <em:version>2.2</em:version> <!-- This is the version number of the add-on -->
+
+            <!-- One targetApplication for each application the add-on is compatible with -->
+            <em:targetApplication>
+              <RDF:Description>
+                <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+                <em:minVersion>1.5</em:minVersion>
+                <em:maxVersion>2.0.0.*</em:maxVersion>
+
+                <!-- This is where this version of the add-on will be downloaded from -->
+                <em:updateLink>https://www.mysite.com/foobar2.2.xpi</em:updateLink>
+
+                <!-- A page describing what is new in this updated version -->
+                <em:updateInfoURL>http://www.mysite.com/updateinfo2.2.xhtml</em:updateInfoURL>
+              </RDF:Description>
+            </em:targetApplication>
+          </RDF:Description>
+        </RDF:li>
+
+        <RDF:li>
+          <RDF:Description>
+            <em:version>2.5</em:version>
+            <em:targetApplication>
+              <RDF:Description>
+                <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+                <em:minVersion>1.5</em:minVersion>
+                <em:maxVersion>2.0.0.*</em:maxVersion>
+                <em:updateLink>http://www.mysite.com/foobar2.5.xpi</em:updateLink>
+                <em:updateHash>sha1:78fc1d2887eda35b4ad2e3a0b60120ca271ce6e6</em:updateHash>
+              </RDF:Description>
+            </em:targetApplication>
+          </RDF:Description>
+        </RDF:li>
+
+      </RDF:Seq>
+    </em:updates>
+
+    <!-- [sulu] em:signature removed -->
+  </RDF:Description>
+</RDF:RDF>
