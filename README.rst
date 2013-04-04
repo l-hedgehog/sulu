@@ -1,6 +1,9 @@
 sulu
 ====
 
+.. image:: https://travis-ci.org/l-hedgehog/sulu.png?branch=master
+        :target: https://travis-ci.org/l-hedgehog/sulu
+
 sulu is another tool for signing update.rdf of mozilla add-ons. It
 is a drop-in replacement for uhura_ if you just want to generate a
 signed update.rdf according to a xpi package and an update url.
