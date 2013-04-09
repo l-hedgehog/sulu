@@ -13,7 +13,7 @@ more common meanings. Other uhura features are not supported,
 hopefully a Python implementation means more people will be able to
 hack it.
 
-The name sulu is choosed as McCoy, spock and uhura already existed
+The name sulu is chosen as McCoy, spock and uhura already existed
 and the original author lives in East Asia :-)
 
 .. _uhura: http://www.softlights.net/projects/mxtools/uhura.html
