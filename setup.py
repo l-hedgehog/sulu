@@ -7,7 +7,7 @@ except ImportError:
 
 setup(
     name='sulu',
-    version='0.1.20130404.2',
+    version='0.1.20150805',
     description='Sign update.rdf of mozilla add-ons in Python',
     long_description=open('README.rst').read(),
     author='Hector Zhao',

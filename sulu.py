@@ -6,7 +6,7 @@
 # You can obtain one at http://mozilla.org/MPL/2.0/.
 #
 
-__version__ = '0.1.20130404.2'
+__version__ = '0.1.20150805'
 
 import hashlib, os, sys
 try:
@@ -150,12 +150,15 @@ def get_install_info(xpi_file, update_link, get_max_version):
     triples = [];
 
     description = install_tree.find('RDF:Description', nsmap)
-    for key in ['updateKey', 'updateURL']:
-        if not description.findtext('em:%s' % key, None, nsmap):
-            raise UserWarning('No em:%s in install.rdf' % key)
     install_id = description.findtext('em:id', None, nsmap)
     update_url = description.findtext('em:updateURL', None, nsmap)
+    if update_url:
+        if not update_url.startswith('https://'):
+            if not description.findtext('em:updateKey', None, nsmap):
+                raise UserWarning('No em:updateKey in install.rdf')
     if update_link == '.':
+        if not update_url:
+            sys.exit('No em:updateURL in install.rdf')
         update_link = '/'.join([
             os.path.dirname(update_url),
             os.path.basename(xpi_file)
